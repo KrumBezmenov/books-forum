@@ -1,0 +1,46 @@
+.logo {
+	width:960px;
+	height:100px;
+	margin:0 auto;
+	text-align:center;
+	font-size:48px;
+	color:#aa1416;
+	clear:both;
+	line-height:150px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+}
+.menu {
+	width:960px;
+	height:100px;
+	background:url(../../../../images/menu-bg.png) no-repeat;
+	padding-bottom: 30px;
+	margin:0 auto;
+	text-align:center;
+	clear:both;
+}
+.menu ul {
+	list-style:none;
+	height:100px;
+	text-align:center;
+	margin:0 auto;
+}
+.menu li {
+	display:inline;
+}
+.menu li a {
+	color:#c6bca5;
+	font-size:18px;
+	text-decoration:none;
+	padding-left:30px;
+	padding-right:30px;
+	
+	
+	line-height:130px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+.menu li a:hover {
+	color:#ffffff;
+}
+.menu li a.active {
+	color:#ffffff;
+}

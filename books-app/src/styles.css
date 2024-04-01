@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	margin:0;
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+body {
+	background:#ffffff url(../images/body-bg.png);
+	font-family: 'Trocchi', serif;
+	font-size:17px;
+	color:#9e6659;
+	height:100%;
+	line-height:20px;
+}
+.wrapper {
+	width:960px;
+	height:auto;
+	margin:0 auto;
+	text-align:left;
+	overflow:hidden;
+}
+
+
+/* Media Queries */
+@media (min-width: 800px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    html {
+      font-size: 18px;
+    }
+  }

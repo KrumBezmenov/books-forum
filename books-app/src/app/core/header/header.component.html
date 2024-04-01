@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="logo">Book Forum</div>
+    <div *ngIf= "!isLoggedIn" class="menu">
+        <ul>
+            <li><a routerLink="/home" class="active">Home</a></li>
+            <li><a routerLink="/themes">Catalog</a></li>
+            <li><a routerLink="/search">Search</a></li>
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register">Register</a></li>
+            
+        </ul>
+    </div>
+    <div *ngIf= "isLoggedIn" class="menu">
+        <ul>
+            <li><a routerLink="/home" class="active">Home</a></li>
+            <li><a routerLink="/themes">Catalog</a></li>
+            <li><a routerLink="/search">Search</a></li>
+            <li><a routerLink="/create">Recommend</a></li>
+            <li (click)="logout()"><a routerLink="/logout">Logout</a></li>
+            
+        </ul>
+    </div>
+    
+</div>

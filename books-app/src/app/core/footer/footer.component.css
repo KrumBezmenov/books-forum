@@ -1,0 +1,18 @@
+footer {
+	margin-top: 1em;
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	max-width: 1366px;
+  }
+.copy-rights {
+	width:900px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	background:url(../../../../images/footer-bg.png) no-repeat;
+	color:#c6bca5;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	margin:0 auto;
+	margin-top:45px;
+}
