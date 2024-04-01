@@ -1,0 +1,32 @@
+<body>
+    <form class="search-container" >
+      <input type="text" id="search-bar" placeholder="What can I help you with today?"  [(ngModel)]="searchComponent" >
+      <a><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+      
+    </form>
+    {{searchComponent}}
+  </body>
+  
+
+
+  <div class="columns-container">
+      <div class="columns-wrapper">
+       
+        <div class="right-column">
+          <div class="right-column-heading">
+            <h1></h1>
+            <h2>Find and enjoy the book you have been looking for.</h2>
+          </div>
+         
+          <div *ngFor="let theme of themes"  class="right-column-content">
+            <div *ngIf="searchComponent === '' || theme.title.toLowerCase().includes(searchComponent)"></div>
+            <h1>Title:  {{theme.title}}</h1>
+            <!-- <h2>{{email}}</h2> -->
+            <p>Author:  {{theme.author}} </p>
+            <p>Genre:  {{theme.genre}} </p>
+            <a [routerLink]="'/themes/'+theme._id+'/details'" class="more-button">Read</a> </div>
+           
+        
+        </div>
+      </div>
+    </div>

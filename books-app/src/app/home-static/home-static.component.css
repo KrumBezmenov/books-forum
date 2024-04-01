@@ -1,0 +1,42 @@
+.header {
+	width:960px;
+	height:auto;
+	text-align:center;
+	margin:0 auto;
+	clear:both;
+}
+.header h1 {
+	font-size:24px;
+	font-weight:normal;
+	color:#401f17;
+	padding-top:30px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+	padding-bottom:10px;
+}
+.header h2 {
+	font-size:18px;
+	font-weight:normal;
+	color:#9e6659;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+	padding-bottom:30px;
+}
+.header-button {
+	width:200px;
+	height:80px;
+	background:url(../../../images/header-button-bg.png) no-repeat;
+	text-align:center;
+	margin:0 auto;
+}
+.header-button a {
+	color:#ffffff;
+	text-decoration:none;
+	font-size:16px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	line-height:100px;
+}
+.header-button a:hover {
+	color:#c6bca5;
+	text-decoration:none;
+	font-size:16px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}

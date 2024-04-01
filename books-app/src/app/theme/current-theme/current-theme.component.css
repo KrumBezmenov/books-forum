@@ -1,0 +1,120 @@
+#details-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* background-color: rgba(255, 255, 255, 0.562); */
+	background: url(../../../../images/book-current.png);
+	margin: 50px auto;
+	min-height: 300px;
+	max-width: 60%;
+	padding: 20px;
+	padding-bottom: 83px;
+	border: 12px ridge rgb(210, 208, 208);
+	
+  }
+  
+  #img-wrapper {
+	max-width: 35%;
+	
+  }
+  
+  #img-wrapper img {
+	
+	width: 100%;
+	min-height: 300px;
+	width: 300px;
+	height: 300px;
+	
+	
+  }
+  
+  #details-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 39px;
+	padding: 5px;
+	padding-bottom: 25px;
+	width: 100%;
+  }
+  
+  #info-wrapper {
+	display: block;
+	width: 65%;
+	margin-left: 10px;
+	
+  }
+  
+  #info-wrapper > p {
+	width: 90%;
+	font-weight: bolder;
+	
+  }
+  
+  #info-wrapper > p > span {
+	font-weight: lighter;
+	border: black;
+	border-width: 4px;
+  }
+  
+  h4 {
+	text-align: center;
+  }
+  
+  p {
+	text-align: center;
+	font-size: 21px;
+	
+  }
+  
+  span {
+	font-size: 19px;
+	overflow: hidden; 
+  }
+  
+  table {
+	width: 90%;
+  }
+  
+  table td p {
+	font-weight: bold;
+	padding: 40px;
+  }
+  
+  table td p span {
+	font-weight: lighter;
+	
+  }
+  
+  #action-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 15px;
+	margin-top:55px;
+	
+  }
+  
+  #action-buttons a {
+	text-decoration: none;
+	margin: auto 50px;
+	font-size: 21px;
+	width: 130px;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	background-color: #b42626;
+  }
+  
+  #action-buttons p {
+	text-decoration: none;
+	margin: auto 50px;
+	font-size: 21px;
+	width: 300px;
+	padding: 10px;
+	margin-top: 10px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	background-color: #b42626;
+  }

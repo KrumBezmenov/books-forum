@@ -1,0 +1,37 @@
+<!-- {{theme._id}} -->
+<!-- {{theme.title}} -->
+<section id="details">
+    <div id="details-wrapper">
+        <p id="details-title">{{theme.title}}</p>
+        <div id="img-wrapper">
+            <img src="{{theme.image}}" />
+        </div>
+        <div id="info-wrapper">
+            <table>
+                <tr>
+                    <td>
+                        <p>Author: <span id="details-author">{{theme.author}}</span></p>
+                    </td>
+                    <td>
+                        <p>Genre: <span id="details-genre">{{theme.genre}}</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p>Description: <span  id="details-description">{{theme.description}}</span></p>
+        </div>
+
+        <!-- isSubscribed -->
+        <!-- <div *ngIf="isLoggedIn" id="action-buttons">
+            <a  id="like-btn">Recommend</a>
+        </div>
+        <div *ngIf="isLoggedIn" id="action-buttons">
+
+            <p id="already-liked">You already recommended this book!</p>
+        </div> -->
+        <div *ngIf="isLoggedIn" id="action-buttons">
+            <a [routerLink]="'/themes/'+theme._id+'/edit'" id="edit-btn">Edit</a>
+            
+            <a (click)="deleteThemeById(theme._id)" id="delete-btn">Delete</a>
+        </div>
+    </div>
+</section>
