@@ -1,36 +1,34 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
 
 const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: [true, "Email is required"],
-    minLength: [10, "Email should be at least 10 characters"],
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: [true, "Password is required"],
-    minLength: [4, "Password should be at least 4 characters"],
-  },
-  createdThemes: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "Themes",
+    name: {
+        type: String,
+        required: [true, 'Name is required'],
+        minLength: [5, 'Name should be at least 5 characters'],
     },
-  ],
-  reviewedThemes: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "Themes",
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        minLength: [10, 'Email should be at least 10 characters'],
+        unique: true,
     },
-  ],
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+        minLength: [4, 'Password should be at least 4 characters'],
+    },
+    createdGames: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Games',
+    }],
 });
 
-userSchema.pre("save", async function () {
-  this.password = await bcrypt.hash(this.password, 12);
+userSchema.pre('save', async function() {
+    this.password = await bcrypt.hash(this.password, 12);
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

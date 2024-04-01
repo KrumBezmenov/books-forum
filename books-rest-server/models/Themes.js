@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const themesSchema = new mongoose.Schema({
   title: {
     type: String,
-    minLength: [2, "Name should be at least 2 characters"],
+    minLength: [1, "Title should be at least 1 characters"],
     required: true,
   },
   genre: {

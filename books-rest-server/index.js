@@ -1,23 +1,23 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
 const routes = require("./routes");
 const { authMiddleware } = require("./middlewares/authMiddeware");
+
+const cors = require("cors");
 
 const port = process.env.PORT || 4000;
 
 const app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 app.use(express.json());
 app.use(authMiddleware);
 
 app.use(routes);
 
 mongoose
-  .connect(`mongodb://127.0.0.1:27017/books-rest-server`)
+  .connect(`mongodb://127.0.0.1:27017/books-forum-db`)
   .then(() => {
     console.log(`DB Connected`);
     app.listen(port, () =>

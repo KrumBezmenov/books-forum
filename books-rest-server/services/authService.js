@@ -5,6 +5,7 @@ const User = require("../models/User");
 
 const { SECRET } = require("../services/config");
 
+// REGISTER
 exports.register = async (userData) => {
   if (userData.password != userData.rePassword) {
     throw new Error("Password missmatch!");
@@ -23,22 +24,28 @@ exports.register = async (userData) => {
   return token;
 };
 
+// LOGIN
 exports.login = async (email, password) => {
   const user = await User.findOne({ email });
-
+  // Check if user exists
   if (!user) {
     throw new Error("Cannot find email or password");
   }
 
+  // Check if password is valid
   const isValid = await bcrypt.compare(password, user.password);
-
   if (!isValid) {
     throw new Error("Cannot find email or password");
   }
 
+  // Generate jwt token
   const token = await generateToken(user);
 
-  return token;
+  return {
+    token: token,
+    name: user.name,
+    email: user.email,
+  };
 };
 
 function generateToken(user) {
@@ -48,5 +55,5 @@ function generateToken(user) {
     email: user.email,
   };
 
-  return jwt.sign(payload, SECRET, { expiresIn: "4h" });
+  return jwt.sign(payload, SECRET, { expiresIn: "3h" });
 }

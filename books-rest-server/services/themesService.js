@@ -6,10 +6,9 @@ exports.getOne = (themesId) => {
 };
 
 exports.getOneDetailed = (themesId) => {
-  return Themes.findById(themesId).populate("owner").populate("reviewedList");
+  return Themes.findById(themesId).populate("owner");
 };
 
-// Get all Themes
 exports.getAll = () => {
   return Themes.find();
 };
@@ -27,7 +26,7 @@ exports.create = async (userId, themesData) => {
   return createdTheme;
 };
 
-exports.edit = (themesId, themesData) => {
+exports.update = (themesId, themesData) => {
   return Themes.findByIdAndUpdate(themesId, themesData, {
     runValidators: true,
   });
@@ -35,4 +34,14 @@ exports.edit = (themesId, themesData) => {
 
 exports.delete = (themesId) => {
   return Themes.findByIdAndDelete(themesId);
+};
+
+exports.search = (name) => {
+  let query = {};
+
+  if (name) {
+    query.name = new RegExp(name, "i");
+  }
+
+  return Themes.find(query);
 };
