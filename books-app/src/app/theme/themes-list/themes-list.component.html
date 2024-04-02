@@ -1,3 +1,6 @@
+
+
+
 <main class="dashboard">
     <section id="dashboard">
         <h2>Book recomendations</h2>
@@ -12,9 +15,7 @@
                 <p>
                     <strong>Genre: </strong><span class="category">{{theme.genre}}</span>
                 </p>
-                <!-- <p>
-                    <strong>Recommend by: </strong><span class="category">{{theme.subscribers.length || 0 }}</span><strong>users</strong>
-                </p> -->
+                
          
                 <a class="details-btn" [routerLink]=" [ theme._id + '/details']">Details</a>
                
@@ -26,9 +27,6 @@
         </ul>
 
         
-        <!-- <div  id="no-post">
-            <h2>No book recomendations?</h2>
-            <h2>Be the first one to recommend one</h2>
-        </div> -->
+        
     </section>
 </main>

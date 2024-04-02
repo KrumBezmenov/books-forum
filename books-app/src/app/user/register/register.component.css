@@ -59,9 +59,9 @@ h1{
 }
 
 .input-group.success input{
-    border-color: #720000;
+    border-color: rgb(236, 30, 30);
 }
 
 .input-group.error input{
-    border-color:rgb(206, 67, 67);
+    border-color:rgb(236, 30, 30);
 }

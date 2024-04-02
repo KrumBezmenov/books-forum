@@ -24,6 +24,9 @@ export class CurrentThemeComponent implements OnInit {
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
+  get isOwnerIn(): boolean {
+    return this.userService.isOwner;
+  }
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data) => {
       const id = data['themeId'];

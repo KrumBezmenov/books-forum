@@ -18,15 +18,21 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" formControlName="password">
             
+
+             <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
+            <div class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']">Password required!</div>
+        </ng-container>
         </div>
+       
         <div class="input-group">
             <label for="rePassword">Confirm Password</label>
             <input type="password" id="rePassword" name="rePassword" formControlName="rePassword">
-            
-        </div>
-            <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
+
+             <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
                 <div class="error" *ngIf="form.get('passGroup')?.errors?.['matchPasswordsValidator'] || form.get('passGroup')?.get('rePassword')?.errors?.['required']">Repeat Password does not match!</div>
             </ng-container>
+        </div>
+           
         </ng-container>
         <button type="button"  (click)="register()">Register</button>
         <p class="text-center">

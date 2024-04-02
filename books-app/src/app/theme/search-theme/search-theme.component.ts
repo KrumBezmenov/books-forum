@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class SearchThemeComponent implements OnInit {
   themes: Theme[] = [];
-  searchComponent: string = '';
+
   constructor(
     private apiService: ApiService,
     private userService: UserService
@@ -30,5 +30,11 @@ export class SearchThemeComponent implements OnInit {
     } catch (error) {}
 
     return parsedUser?.name;
+  }
+
+  fetchThemeByName(title: string): void {
+    this.apiService.searchGame(title).subscribe((data) => {
+      this.themes = data;
+    });
   }
 }

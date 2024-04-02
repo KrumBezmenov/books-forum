@@ -81,21 +81,14 @@ export class ApiService {
     });
   }
 
-  // updateTheme(
-  //   title: string,
-  //   genre: string,
-  //   author: string,
-  //   image: string,
-  //   description: string
-  // ) {
-  //   return this.httpClient
-  //     .post<Theme>(`auth/themes/update`, {
-  //       title,
-  //       genre,
-  //       author,
-  //       image,
-  //       description,
-  //     })
-  //     .pipe(tap((theme) => this.theme$$.next(theme)));
-  // }
+  searchGame(title: string) {
+    const headerObject = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    };
+    return this.httpClient.get<Theme[]>(`${apiUrl}/search`, {
+      headers: headerObject,
+      params: { q: title },
+    });
+  }
 }
