@@ -1,8 +1,7 @@
 <body>
     <form class="search-container" >
       <input type="string" id="search-bar" placeholder="What book are we searching for?" min="1" max="15" #input  >
-      <!-- <a> <button (click)="fetchThemeByName" ></button><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a> -->
-      <a class="search-button" (click)="fetchThemeByName(input.value)">Search</a>
+      <a (click)="fetchThemeByName(input.value)" > <img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
       
     </form>
 
