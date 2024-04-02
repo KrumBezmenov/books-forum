@@ -17,7 +17,7 @@
                     </td>
                 </tr>
             </table>
-            <p>Description: <span  id="details-description">{{theme.description}}</span></p>
+            <p>Description: <span id="details-description">{{theme.description}}</span></p>
         </div>
 
         <!-- isSubscribed -->
@@ -28,10 +28,13 @@
 
             <p id="already-liked">You already recommended this book!</p>
         </div> -->
-        <div *ngIf="isLoggedIn && isOwnerIn" id="action-buttons">
-            <a [routerLink]="'/themes/'+theme._id+'/edit'" id="edit-btn">Edit</a>
-            
-            <a (click)="deleteThemeById(theme._id)" id="delete-btn">Delete</a>
+        <div *ngIf="isLoggedIn" id="action-buttons">
+
+            <div *ngIf="theme.isOwner" id="action-buttons">
+                <a [routerLink]="'/themes/'+theme._id+'/edit'" id="edit-btn">Edit</a>
+
+                <a (click)="deleteThemeById(theme._id)" id="delete-btn">Delete</a>
+            </div>
         </div>
     </div>
 </section>

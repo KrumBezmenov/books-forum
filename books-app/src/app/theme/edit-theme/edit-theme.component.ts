@@ -88,7 +88,6 @@ export class EditThemeComponent implements OnInit {
   //     });
   // }
   ngOnInit(): void {
-    console.log();
     this.activeRoute.params.subscribe((data) => {
       const id = data['themeId'];
       this.api.getTheme(id).subscribe((theme) => {

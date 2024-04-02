@@ -14,6 +14,7 @@ export interface Theme {
   created_at: string;
   updatedAt: string;
   __v: number;
+  isOwner: string;
 }
 
 export interface themeDetails {

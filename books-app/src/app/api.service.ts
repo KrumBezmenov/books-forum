@@ -20,7 +20,24 @@ export class ApiService {
   }
 
   getTheme(id: string) {
-    return this.httpClient.get<Theme>(`${apiUrl}/${id}/details`);
+    const headerObject = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    };
+    return this.httpClient.get<Theme>(`${apiUrl}/${id}/details`, {
+      headers: headerObject,
+    });
+  }
+
+  getThemeAuth(id: string, token: string) {
+    const headerObject = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: token,
+    };
+    return this.httpClient.get<Theme>(`${apiUrl}/${id}/details`, {
+      headers: headerObject,
+    });
   }
 
   // createTheme(

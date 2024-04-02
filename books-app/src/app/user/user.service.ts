@@ -22,17 +22,17 @@ export class UserService {
     return isValid;
   }
 
-  get isOwner(): boolean {
-    let isValid = false;
-    this.token = this.getToken();
-    this.user = this.getUser();
+  // get isOwner(): boolean {
+  //   let isValid = false;
+  //   this.token = this.getToken();
+  //   this.user = this.getUser();
 
-    if (this.token && this.user) {
-      isValid = true;
-    }
+  //   if (this.token && this.user) {
+  //     isValid = true;
+  //   }
 
-    return isValid;
-  }
+  //   return isValid;
+  // }
 
   //userSubscription: Subscription;
 

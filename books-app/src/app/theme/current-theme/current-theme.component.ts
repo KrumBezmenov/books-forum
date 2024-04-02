@@ -24,15 +24,22 @@ export class CurrentThemeComponent implements OnInit {
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
-  get isOwnerIn(): boolean {
-    return this.userService.isOwner;
-  }
+  // get isOwnerIn(): boolean {
+  //   return this.userService.isOwner;
+  // }
   ngOnInit(): void {
+    const token = this.userService.getToken();
     this.activeRoute.params.subscribe((data) => {
       const id = data['themeId'];
-      this.api.getTheme(id).subscribe((theme) => {
-        this.theme = theme;
-      });
+      if (token) {
+        this.api.getThemeAuth(id, token).subscribe((theme) => {
+          this.theme = theme;
+        });
+      } else {
+        this.api.getTheme(id).subscribe((theme) => {
+          this.theme = theme;
+        });
+      }
     });
   }
 
