@@ -62,6 +62,12 @@ router.get("/:themesId/delete", isAuth, isThemesOwner, async (req, res) => {
   res.json(themes);
 });
 
+router.get("/search", async (req, res) => {
+  const query = req.query.q;
+  const data = await themesService.search(query);
+  res.json(data);
+});
+
 async function isThemesOwner(req, res, next) {
   const themes = await themesService.getOneDetailed(req.params.themesId).lean();
 

@@ -36,11 +36,12 @@ exports.delete = (themesId) => {
   return Themes.findByIdAndDelete(themesId);
 };
 
-exports.search = (name) => {
+exports.search = (title) => {
   let query = {};
 
-  if (name) {
-    query.name = new RegExp(name, "i");
+  if (title) {
+    // query.name = name;
+    query.title = new RegExp(title, "i");
   }
 
   return Themes.find(query);
