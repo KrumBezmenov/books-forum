@@ -54,8 +54,5 @@ export class RegisterComponent {
       this.userService.token = data.token;
       this.router.navigate(['/home']);
     });
-    // this.userService.register(email!, password!, rePassword!).subscribe(() => {
-    //   this.router.navigate(['/home']);
-    // });
   }
 }

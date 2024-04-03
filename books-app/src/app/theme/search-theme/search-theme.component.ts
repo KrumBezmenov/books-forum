@@ -33,7 +33,7 @@ export class SearchThemeComponent implements OnInit {
   }
 
   fetchThemeByName(title: string): void {
-    this.apiService.searchGame(title).subscribe((data) => {
+    this.apiService.searchTheme(title).subscribe((data) => {
       this.themes = data;
     });
   }

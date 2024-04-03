@@ -16,18 +16,7 @@ export class LoginComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   login(form: NgForm) {
-    //console.log('button clicked');
-    // if (form.invalid) {
-    //   return;
-    // }
-
     const { email, password } = form.value;
-    //console.log('HERE', email, password);
-
-    // this.userService.login({ email, password }).subscribe((data) => {
-    //   console.log('DATA', data);
-    //   this.router.navigate(['/home']);
-    // });
     this.userService
       .login({ email: email, password: password })
       .subscribe((data) => {

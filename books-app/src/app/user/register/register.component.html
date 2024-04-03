@@ -9,7 +9,7 @@
             <ng-container *ngIf="form.get('email')?.touched">
                 <div class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
                 <div class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">Email is not valid</div>
-                
+                <div class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">Email must be gmail.com</div>
             </ng-container>
         </div>
 

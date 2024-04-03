@@ -1,32 +1,22 @@
-
-
-
 <main class="dashboard">
-    <section id="dashboard">
-        <h2>Book recomendations</h2>
-        
-        <ul class="card-wrapper">
-            
-            <li *ngFor="let theme of themes" class="card">
-                <img src="{{theme.image}}"/>
-                <p>
-                    <strong>Title: </strong><span class="name">{{theme.title}}</span>
-                </p>
-                <p>
-                    <strong>Genre: </strong><span class="category">{{theme.genre}}</span>
-                </p>
-                
-         
-                <a class="details-btn" [routerLink]=" [ theme._id + '/details']">Details</a>
-               
+  <section id="dashboard">
+    <h2>Book recomendations</h2>
 
-                
-            </li>
-          
-            
-        </ul>
+    <ul class="card-wrapper">
+      <li *ngFor="let theme of themes" class="card">
+        <img src="{{ theme.image }}" />
+        <p>
+          <strong>Title: </strong><span class="name">{{ theme.title }}</span>
+        </p>
+        <p>
+          <strong>Genre: </strong
+          ><span class="category">{{ theme.genre }}</span>
+        </p>
 
-        
-        
-    </section>
+        <a class="details-btn" [routerLink]="[theme._id + '/details']"
+          >Details</a
+        >
+      </li>
+    </ul>
+  </section>
 </main>

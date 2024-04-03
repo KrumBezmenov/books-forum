@@ -2,7 +2,6 @@
     <form class="search-container" >
       <input type="string" id="search-bar" placeholder="What book are we searching for?" min="1" max="15" #input  >
       <a (click)="fetchThemeByName(input.value)" > <img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-      
     </form>
 
   <div class="columns-container">
@@ -17,7 +16,6 @@
           <div *ngFor="let theme of themes"  class="right-column-content">
             
             <h1>Title:  {{theme.title}}</h1>
-            <!-- <h2>{{email}}</h2> -->
             <p>Author:  {{theme.author}} </p>
             <p>Genre:  {{theme.genre}} </p>
             <a [routerLink]="'/themes/'+theme._id+'/details'" class="more-button">Read</a> </div>

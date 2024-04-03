@@ -10,11 +10,10 @@ export class UserService {
   user: UserForAuth | undefined;
   token: string = '';
   TOKEN_KEY = '[token]';
-
+  USER_KEY = '[user]';
   get isLogged(): boolean {
     let isValid = false;
     this.token = this.getToken();
-    //console.log(this.token);
     if (this.token) {
       isValid = true;
     }
@@ -22,21 +21,6 @@ export class UserService {
     return isValid;
   }
 
-  // get isOwner(): boolean {
-  //   let isValid = false;
-  //   this.token = this.getToken();
-  //   this.user = this.getUser();
-
-  //   if (this.token && this.user) {
-  //     isValid = true;
-  //   }
-
-  //   return isValid;
-  // }
-
-  //userSubscription: Subscription;
-
-  USER_KEY = '[user]';
   constructor(private httpClient: HttpClient) {
     try {
       const isUser = localStorage.getItem(this.USER_KEY) || '';
@@ -68,19 +52,7 @@ export class UserService {
       }
     );
   }
-  // register(email: string, password: string, rePassword: string) {
-  //   return this.httpClient.post<UserForAuth>('/auth/register', {
-  //     email,
-  //     password,
-  //     rePassword,
-  //   });
-  // }
-  // login(email: string, password: string) {
-  //   return this.httpClient.post<UserForAuth>('/auth/login', {
-  //     email,
-  //     password,
-  //   });
-  // }
+
   login(params: { email: any; password: any }): Observable<any> {
     const body = {
       email: params.email,

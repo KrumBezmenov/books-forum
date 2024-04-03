@@ -1,39 +1,55 @@
 <div class="container">
-    <form action="" id= 'form' #form="ngForm" (ngSubmit)="login(form)">
-        <h1>Login</h1>
-        
-        <div class="input-group" >
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" ngModel #inputEmail="ngModel" required [appEmail]="domains"/>
+  <form action="" id="form" #form="ngForm" (ngSubmit)="login(form)">
+    <h1>Login</h1>
 
-            
-            <ng-container *ngIf="inputEmail.touched">
-                <div class="error" *ngIf="inputEmail.errors?.['required']">Email is required</div>
-                <div class="error" *ngIf="inputEmail.errors?.['emailValidator']">Email is not valid</div>
-                
-            </ng-container>
-            
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        ngModel
+        #inputEmail="ngModel"
+        required
+        [appEmail]="domains"
+      />
 
+      <ng-container *ngIf="inputEmail.touched">
+        <div class="error" *ngIf="inputEmail.errors?.['required']">
+          Email is required
         </div>
-
-
-        
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="**********" ngModel #inputPassword="ngModel" required minlength="5"/>
-
-            <ng-container *ngIf="inputPassword.touched" >
-
-                <div class="error" *ngIf="inputPassword.errors?.['required']">Password is required</div>
-                <div class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 5 characters!</div>
-
-            </ng-container>
-            
+        <div class="error" *ngIf="inputEmail.errors?.['emailValidator']">
+          Email is not valid
         </div>
-        <button>Login</button>
-        <p class="text-center">
-            Don't have an account yet?
-            <a routerLink="/register">Create account</a>
-          </p>
-    </form>
+      </ng-container>
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="**********"
+        ngModel
+        #inputPassword="ngModel"
+        required
+        minlength="5"
+      />
+
+      <ng-container *ngIf="inputPassword.touched">
+        <div class="error" *ngIf="inputPassword.errors?.['required']">
+          Password is required
+        </div>
+        <div class="error" *ngIf="inputPassword.errors?.['minlength']">
+          Password must be at least 5 characters!
+        </div>
+      </ng-container>
+    </div>
+    <button>Login</button>
+    <p class="text-center">
+      Don't have an account yet?
+      <a routerLink="/register">Create account</a>
+    </p>
+  </form>
 </div>
