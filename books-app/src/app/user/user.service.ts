@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Auth, UserForAuth } from '../types/user';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +13,7 @@ export class UserService {
   token: string = '';
   TOKEN_KEY = '[token]';
   USER_KEY = '[user]';
+
   get isLogged(): boolean {
     let isValid = false;
     this.token = this.getToken();
@@ -40,16 +44,12 @@ export class UserService {
       rePassword: params.rePassword,
     };
     const stringifiedBody = JSON.stringify(body);
-    return this.httpClient.post<Auth>(
-      'http://localhost:4000/auth/register',
-      stringifiedBody,
-      {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return this.httpClient.post<Auth>(`${apiUrl}/register`, stringifiedBody, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   login(params: { email: string; password: string }) {
@@ -58,16 +58,12 @@ export class UserService {
       password: params.password,
     };
     const stringifiedBody = JSON.stringify(body);
-    return this.httpClient.post<Auth>(
-      'http://localhost:4000/auth/login',
-      stringifiedBody,
-      {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return this.httpClient.post<Auth>(`${apiUrl}/login`, stringifiedBody, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   logout() {
