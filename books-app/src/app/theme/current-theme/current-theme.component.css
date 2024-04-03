@@ -85,6 +85,7 @@
 	font-weight: bold;
 	padding: 40px;
 	color: black;
+	margin-left: 5px;
   }
   
   table td p span {
@@ -97,7 +98,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 15px;
+	margin-bottom: -55px;
 	margin-top:55px;
 	cursor: pointer;
 	
