@@ -21,7 +21,7 @@ export class EmailDirective implements Validator, OnChanges {
 
   validator: ValidatorFn = () => null;
 
-  validate(control: AbstractControl<any, any>): ValidationErrors | null {
+  validate(control: AbstractControl<string, string>): ValidationErrors | null {
     return this.validator(control);
   }
   ngOnChanges(changes: SimpleChanges): void {

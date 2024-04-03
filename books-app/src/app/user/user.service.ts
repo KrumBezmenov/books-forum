@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserForAuth } from '../types/user';
+import { Auth, UserForAuth } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -29,11 +28,11 @@ export class UserService {
   }
 
   register(params: {
-    email: any;
-    name: any;
-    password: any;
-    rePassword: any;
-  }): Observable<any> {
+    email: string;
+    name: string;
+    password: string;
+    rePassword: string;
+  }) {
     const body = {
       email: params.email,
       name: params.name,
@@ -41,7 +40,7 @@ export class UserService {
       rePassword: params.rePassword,
     };
     const stringifiedBody = JSON.stringify(body);
-    return this.httpClient.post(
+    return this.httpClient.post<Auth>(
       'http://localhost:4000/auth/register',
       stringifiedBody,
       {
@@ -53,13 +52,13 @@ export class UserService {
     );
   }
 
-  login(params: { email: any; password: any }): Observable<any> {
+  login(params: { email: string; password: string }) {
     const body = {
       email: params.email,
       password: params.password,
     };
     const stringifiedBody = JSON.stringify(body);
-    return this.httpClient.post(
+    return this.httpClient.post<Auth>(
       'http://localhost:4000/auth/login',
       stringifiedBody,
       {

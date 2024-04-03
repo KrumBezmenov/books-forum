@@ -37,7 +37,7 @@ export class ApiService {
     });
   }
 
-  createTheme(themeData: Theme, token: string): Observable<any> {
+  createTheme(themeData: Theme, token: string) {
     const headerObject = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ export class ApiService {
     });
   }
 
-  deleteThemeById(id: string, token: string): Observable<any> {
+  deleteThemeById(id: string, token: string) {
     const headerObject = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export class ApiService {
     });
   }
 
-  saveThemeById(id: string, themeData: Theme, token: string): Observable<any> {
+  saveThemeById(id: string, themeData: Theme, token: string) {
     const headerObject = {
       Accept: 'application/json',
       'Content-Type': 'application/json',

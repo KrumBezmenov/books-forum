@@ -40,10 +40,10 @@ export class RegisterComponent {
     const { email, passGroup: { password, rePassword } = {} } = this.form.value;
     const formData = this.form.value;
     const formBody = {
-      email: email,
-      name: email,
-      password: formData.passGroup?.password,
-      rePassword: formData.passGroup?.rePassword,
+      email: email as string,
+      name: email as string,
+      password: formData.passGroup?.password as string,
+      rePassword: formData.passGroup?.rePassword as string,
     };
 
     this.userService.register(formBody).subscribe((data) => {

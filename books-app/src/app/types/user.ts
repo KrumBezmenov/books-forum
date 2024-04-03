@@ -16,3 +16,9 @@ export interface UserForAuth {
   password: string;
   id: string;
 }
+
+export interface Auth {
+  token: string;
+  email: string;
+  name: string;
+}
