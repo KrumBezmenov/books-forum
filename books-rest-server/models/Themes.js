@@ -23,7 +23,7 @@ const themesSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    minLength: [15, "Description should be at least 10 characters"],
+    minLength: [10, "Description should be at least 10 characters"],
     required: true,
   },
   reviewedList: [
