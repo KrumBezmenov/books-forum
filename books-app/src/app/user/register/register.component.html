@@ -16,11 +16,12 @@
         <ng-container formGroupName="passGroup">
         <div class="input-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" formControlName="password">
+            <input type="password" id="password" name="password" formControlName="password" minlength="4">
             
 
              <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
             <div class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']">Password required!</div>
+            <div class="error"  *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">Password must be 4 characters or above</div>
         </ng-container>
         </div>
        
