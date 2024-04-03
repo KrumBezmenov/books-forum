@@ -2,7 +2,6 @@ import { Post } from './post';
 import { User } from './user';
 
 export interface Theme {
-  subscribers: string[];
   posts: string[] | Post[];
   _id: string;
   description: string;

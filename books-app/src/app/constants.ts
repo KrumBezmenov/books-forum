@@ -1,1 +1,1 @@
-export const EMAIL_DOMAINS = ['bg', 'com'];
+export const EMAIL_DOMAINS = ['com'];

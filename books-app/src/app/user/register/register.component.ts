@@ -38,7 +38,6 @@ export class RegisterComponent {
     }
 
     const { email, passGroup: { password, rePassword } = {} } = this.form.value;
-    console.log(this.form.value);
     const formData = this.form.value;
     const formBody = {
       email: email,
@@ -46,7 +45,6 @@ export class RegisterComponent {
       password: formData.passGroup?.password,
       rePassword: formData.passGroup?.rePassword,
     };
-    console.log(formBody);
 
     this.userService.register(formBody).subscribe((data) => {
       localStorage.setItem(this.TOKEN_KEY, data.token);
