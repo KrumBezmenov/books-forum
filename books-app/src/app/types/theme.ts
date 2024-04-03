@@ -15,11 +15,3 @@ export interface Theme {
   __v: number;
   isOwner: string;
 }
-
-export interface themeDetails {
-  title: string;
-  genre: string;
-  author: string;
-  image: string;
-  description: string;
-}

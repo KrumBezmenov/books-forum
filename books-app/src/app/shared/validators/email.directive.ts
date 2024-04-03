@@ -25,8 +25,6 @@ export class EmailDirective implements Validator, OnChanges {
     return this.validator(control);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    //
-
     const { currentValue } = changes['appEmail'];
     if (currentValue?.length) {
       this.validator = emailValidator(currentValue);
