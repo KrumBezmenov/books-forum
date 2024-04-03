@@ -16,8 +16,7 @@
   color: beige;
 }
 
-.form input,
-textarea {
+.form input {
   background: url(../../../../images/body-bg.png);
   width: 65%;
   height: 75px;
