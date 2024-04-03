@@ -3,6 +3,7 @@
         <div class="form">
             <h2>Recommend Book</h2>
             <form class="create-form" #form="ngForm" >
+
                 <input type="text" name="title" id="title" placeholder="Title" #inputtitle="ngModel" ngModel required minlength="1"/>
                 <ng-container *ngIf="inputtitle.touched">
                     <div class="warning" *ngIf="inputtitle?.errors?.['minlength']"> Title length must be above 1 character! </div>
@@ -11,40 +12,27 @@
 
 
                 <input type="text" name="genre" id="genre" placeholder="Genre" #inputGenreTitle="ngModel" ngModel required minlength="3" />
-                
                 <ng-container *ngIf="inputGenreTitle.touched">
-                    
                     <div class="warning" *ngIf="inputGenreTitle?.errors?.['minlength']"> Description length must be above 3 characters! </div>
-                    <div class="warning" *ngIf="inputGenreTitle?.errors?.['required']"> Description is required </div>
-                    
+                    <div class="warning" *ngIf="inputGenreTitle?.errors?.['required']"> Description is required </div> 
                 </ng-container>
 
                 <input type="text" name="author" id="author" placeholder="Author" #inputAuthor="ngModel" ngModel required minlength="3"/>
-
                 <ng-container *ngIf="inputAuthor.touched">
-                    
                     <div class="warning" *ngIf="inputAuthor?.errors?.['minlength']"> Author's name length must be above 3 characters! </div>
                     <div class="warning" *ngIf="inputAuthor?.errors?.['required']"> Author name is required </div>
-                    
                 </ng-container>
 
                 <input type="text" name="image" id="image" placeholder="Image" #inputImg="ngModel" ngModel required minlength="15" />
-
-                <ng-container *ngIf="inputImg.touched">
-                    
-                    <div class="warning" *ngIf="inputImg?.errors?.['minlength']">Image URL length must be above 15 characters! </div>
-                    <div class="warning" *ngIf="inputImg?.errors?.['required']"> Book image is required </div>
-                    
+                <ng-container *ngIf="inputImg.touched">                   
+                    <div class="warning" *ngIf="inputImg?.errors?.['minlength']">Image URL is invalid! </div>
+                    <div class="warning" *ngIf="inputImg?.errors?.['required']"> Book image is required </div>                  
                 </ng-container>
 
-
                 <textarea id="description" placeholder="Description..." name="description" #textareaPostText="ngModel" ngModel required minlength="10"></textarea>
-
-                <ng-container *ngIf="textareaPostText.touched">
-                    
+                <ng-container *ngIf="textareaPostText.touched">                   
                     <div class="warning" *ngIf="textareaPostText?.errors?.['minlength']"> Description length must be above 10 characters! </div>
-                    <div class="warning" *ngIf="textareaPostText?.errors?.['required']"> Description is required </div>
-                    
+                    <div class="warning" *ngIf="textareaPostText?.errors?.['required']"> Description is required </div>                   
                 </ng-container>
 
                 <button (click)='createTheme(form)' >Recommend</button>

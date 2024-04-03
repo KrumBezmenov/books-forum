@@ -24,9 +24,7 @@ export class CurrentThemeComponent implements OnInit {
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
-  // get isOwnerIn(): boolean {
-  //   return this.userService.isOwner;
-  // }
+
   ngOnInit(): void {
     const token = this.userService.getToken();
     this.activeRoute.params.subscribe((data) => {
@@ -41,20 +39,6 @@ export class CurrentThemeComponent implements OnInit {
         });
       }
     });
-  }
-
-  // ngOnInit(): void {
-  //   this.api.getThemes().subscribe((themes) => {
-  //     console.log(themes);
-  //     this.themes = themes;
-  //   });
-  // }
-  isSubscribed(theme: Theme) {
-    const isSubscribedUser = theme.subscribers.find((s) => {
-      return s === this.userService.user?.id;
-    });
-
-    return !!isSubscribedUser;
   }
   deleteThemeById(id: string): void {
     const token = this.userService.getToken();

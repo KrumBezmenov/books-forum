@@ -1,5 +1,3 @@
-<!-- {{theme._id}} -->
-<!-- {{theme.title}} -->
 <section id="details">
     <div id="details-wrapper">
         <p id="details-title">{{theme.title}}</p>
@@ -19,15 +17,6 @@
             </table>
             <p>Description: <span id="details-description">{{theme.description}}</span></p>
         </div>
-
-        <!-- isSubscribed -->
-        <!-- <div *ngIf="isLoggedIn" id="action-buttons">
-            <a  id="like-btn">Recommend</a>
-        </div>
-        <div *ngIf="isLoggedIn" id="action-buttons">
-
-            <p id="already-liked">You already recommended this book!</p>
-        </div> -->
         <div *ngIf="isLoggedIn" id="action-buttons">
 
             <div *ngIf="theme.isOwner" id="action-buttons">
