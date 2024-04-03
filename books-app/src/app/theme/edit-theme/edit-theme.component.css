@@ -15,7 +15,7 @@
 	font-size: 40px;
 	color: beige
   }
-  .form input, textarea {
+  .form input {
 	outline: 0;
 	background: url(../../../../images/body-bg.png);
 	width: 65%;
@@ -28,7 +28,8 @@
 	font-size: 20px;
 	text-align: center;
 	font-weight: bold;
-	font-family:Arial, Helvetica, sans-serif
+	font-family:Arial, Helvetica, sans-serif;
+	font-style: italic;
   }
   .form button {
 	text-transform: uppercase;

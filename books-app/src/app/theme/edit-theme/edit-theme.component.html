@@ -30,7 +30,7 @@
                 </ng-container>
 
 
-                <textarea id="description" placeholder="Description..." name="description" #textareaPostText="ngModel"  [(ngModel)]="theme.description" ngModel required minlength="10"></textarea>
+                <input id="description" placeholder="Description..." name="description" #textareaPostText="ngModel"  [(ngModel)]="theme.description" ngModel required minlength="10">
                 <ng-container *ngIf="textareaPostText.touched">                   
                     <div class="warning" *ngIf="textareaPostText?.errors?.['minlength']"> Description length must be above 10 characters! </div>
                     <div class="warning" *ngIf="textareaPostText?.errors?.['required']"> Description is required </div>                   
